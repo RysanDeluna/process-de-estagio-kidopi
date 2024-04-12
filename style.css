@@ -1,0 +1,118 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 20px;
+    --soft-white: #F5F5F5;
+    --soft-dark : #07010C;
+    --blue-link : #0550E7;   
+}
+
+body{
+    color: var(--soft-white);
+    font-family: 'Iosevka Regular', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif 
+}
+
+a{
+    color: var(--blue-link);
+    text-decoration: dashed;
+}
+
+li{
+    list-style: none;
+}
+
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    background: no-repeat right url(assets/background.jpg);
+    background-position: center;
+    background-size: cover;
+
+    padding: 5% 30px 0 30px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    height: 64px;
+}
+
+.header a {
+    color: var(--soft-white);
+}
+
+.header__esquerda {
+    display: flex; 
+    align-items: center;
+    gap: 20%;
+}
+
+#logo {
+    height: 64px;
+}
+
+#logo img {
+    height: 50px;
+    object-fit: contain;
+}
+
+.header__ul {
+    display: flex;
+    gap: 48px;
+}
+
+.main__text-content{
+    width: 40%;
+}
+
+.main__title{
+    display:block;
+    font-size: 32px;
+    line-height:80px;
+    margin-bottom:24px;
+}
+    
+caption {
+    padding-bottom: 3px;
+}
+
+table, th, td {
+    padding: 5px;
+    font-size: 16px;
+    border-collapse: collapse;
+    border: 1px solid;
+    border-color: var(--soft-white)
+}
+
+.header__button {
+    display: block;
+    background: var(--soft-white);
+    height: 50px;
+    width: 85px;
+    border: 0;
+}
+
+.footer {
+    position: absolute;
+    align-items: flex-start;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 30px 20px 30px;
+}
+
+.hora-consulta {
+    margin-bottom: 10px;
+}
+
+.address_description {
+    
+}
