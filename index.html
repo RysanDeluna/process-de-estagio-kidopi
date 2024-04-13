@@ -14,15 +14,13 @@
                 </div>
                 <nav class="header__nav">
                     <ul class="header__ul">
-                        <li><button class="header__button" id="buttonBrazil">Brazil</button></li>
-                        <li><button class="header__button" id="buttonCanada">Canada</button></li>
-                        <li><button class="header__button" id="buttonAustralia">Australia</button></li>
+                            <li><button name="click" class="header__button" id="buttonBrazil">Brazil</button></li>
+                            <li><button name="click" class="header__button" id="buttonCanada">Canada</button></li>
+                            <li><button name="click" class="header__button" id="buttonAustralia">Australia</button></li>
                     </ul>
                 </nav>
             </div>
-            <div class="time">
-                HORA CONSULTADA
-            </div>
+            <div></div>
         </header>
         <main class="main">
             <div class="main__text-content">
@@ -47,7 +45,12 @@
             </div>
         </main>
         <footer class="footer">
-            <h3 class="hora-consulta">DATA - PAIS do ultimo acesso</h3>
+            <h3 class="hora-consulta">
+                <?php
+                    $currenttime = new DateTime('now');
+                    echo $currenttime;
+                ?>
+            </h3>
             <address class="address_description">
                 <p>Feito por 
                    <a href="https://github.com/RysanDeluna" target="_blank">Ryan Marco Andrade dos Santos</a>
