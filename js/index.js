@@ -13,16 +13,52 @@ botaoAu.addEventListener("click", () => {getData(url_Au)});
 
 // Aquisição de dados da API
 async function getData(url) {
-    console.log(url)
-
     const response = await fetch(url)
     const data = await response.json();
 
-    showData(data);
+    populateTable(data);
 }
 
-function populateTable() {
+function populateTable(obj) {
+    var tbody = document.querySelector('#table_content');
+    var tfoot = document.querySelector('#table_footer');
+    tbody.innerHTML = "";
+    tfoot.innerHTML = "";
 
+    var totalConfirmados = 0;
+    var totalMortos = 0;
+
+    for (const i in obj) {
+        // Criacao das tags
+        var tr = document.createElement('tr');
+        var th = document.createElement('th');
+        var td_casos = document.createElement('td');
+        var td_morto = document.createElement('td');
+
+        th.scope = "row";
+        th.textContent = obj[i].ProvinciaEstado;
+        td_casos.textContent = obj[i].Confirmados;
+        td_morto.textContent = obj[i].Mortos;
+
+        totalMortos += Number(obj[i].Mortos);
+        totalConfirmados += Number(obj[i].Confirmados);
+
+        tr.append(th, td_casos, td_morto);
+        tbody.append(tr);
+    }
+
+    var tr = document.createElement('tr');
+    var th = document.createElement('th');
+    var td_casos = document.createElement('td');
+    var td_morto = document.createElement('td');
+
+    th.scope = "row";
+    th.textContent = "Total";
+    td_casos.textContent = totalConfirmados;
+    td_morto.textContent = totalMortos;
+
+    tr.append(th, td_casos, td_morto);
+    tfoot.append(tr);
 }
 
 // Função auxiliar para ver os dados
